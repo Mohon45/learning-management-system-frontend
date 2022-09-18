@@ -1,14 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Login from "../components/Authorization/Login/Login";
-import Register from "../components/Authorization/Register/Register";
+import Home from "../components/Home/Home/Home";
+import NotFound from "../components/NotFound/NotFound";
 
 const ComponentRoute = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
