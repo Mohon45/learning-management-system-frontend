@@ -19,7 +19,7 @@ const Navbar = () => {
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand text-white" href="/home">
-              Hidden brand
+              E-Tutors
             </a>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
@@ -37,12 +37,12 @@ const Navbar = () => {
             <div className="ms-3">
               <div className="dropdown me-3">
                 <span
-                  className="dropdown-toggle"
+                  className="dropdown-toggle dropdown-avater-img"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   <img
-                    src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
+                    src="https://i.ibb.co/zh64p5L/user-Avater.png"
                     width="60"
                     height="60"
                     className="rounded-circle border border-4 "

@@ -6,10 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
 }
-
-/* Authorization design */
 .wave {
   position: fixed;
   bottom: 0;
@@ -18,13 +15,15 @@ body {
   z-index: -1;
 }
 
-.container {
+.auth-container {
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 7rem;
   padding: 0 2rem;
+  /* position: fixed; */
+  overflow: hidden !important;
 }
 
 .img {
@@ -38,6 +37,8 @@ body {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
+  overflow: hidden !important;
+  flex-wrap: wrap !important;
 }
 
 .img img {
@@ -231,7 +232,7 @@ form {
 
 /* Navbar section Design Start */
 .navbar {
-  height: 100px;
+  /* height: 100px; */
   background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
 }
 .navbar-brand {
@@ -240,6 +241,58 @@ form {
 .nav-item {
   font-size: 1.5rem;
 }
+.dropdown-avater-img {
+  cursor: pointer;
+}
 .profile-icon-menu {
   background-color: #38d39f;
+}
+
+/* Home Section Design Start */
+
+/* Footer Section Design Start */
+.footer {
+  background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+}
+.footer-app-img img {
+  width: 150px;
+}
+.quick-link-item {
+  line-height: 1px;
+}
+.quick-link-item a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.933);
+}
+.quick-link-item a:hover {
+  color: #eb2026;
+}
+.footer-social-icon a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.footer-social-icon a:hover {
+  transform: scale(1.5);
+}
+@media screen and (max-width: 767px) {
+  .company-quck-link {
+    margin-top: 25px;
+  }
+  .footer-contect {
+    margin-top: 20px;
+  }
+  .app-img {
+    text-align: center;
+  }
+  .footer-app-img {
+    margin-left: 15px;
+  }
 }

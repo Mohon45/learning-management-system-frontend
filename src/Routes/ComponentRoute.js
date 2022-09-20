@@ -7,7 +7,7 @@ const ComponentRoute = () => {
   return (
     <div>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

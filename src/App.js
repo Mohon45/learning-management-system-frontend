@@ -1,12 +1,10 @@
 import "./Assets/style.css";
-import Layout from "./HOC/Layout";
-import AuthorizationRoute from "./Routes/AuthorizationRoute";
+import CommonRoute from "./Routes/CommonRoute";
 
 function App() {
   return (
     <div className="App">
-      <AuthorizationRoute />
-      <Layout />
+      <CommonRoute />
     </div>
   );
 }

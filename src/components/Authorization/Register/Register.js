@@ -6,9 +6,9 @@ import avater from "../../../Assets/img/avatar.svg";
 
 const Register = () => {
   return (
-    <div>
+    <div className="authorize">
       <img className="wave" src={wave} alt="" />
-      <div className="container">
+      <div className="auth-container">
         <div className="img">
           <img src={bg} alt="" />
         </div>

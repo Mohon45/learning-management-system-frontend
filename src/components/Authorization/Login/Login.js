@@ -6,9 +6,9 @@ import avater from "../../../Assets/img/avatar.svg";
 
 const Login = () => {
   return (
-    <div>
+    <div className="authorize">
       <img className="wave" src={wave} alt="wave" />
-      <div className="container">
+      <div className="auth-container">
         <div className="img">
           <img src={bg} alt="" />
         </div>
@@ -36,7 +36,7 @@ const Login = () => {
                 />
               </div>
             </div>
-            <Link className="authorization-redirect" to="/">
+            <Link className="authorization-redirect" to="/register">
               New User? Please Register
             </Link>
             <input type="submit" className="btn" value="Login" />

@@ -3,11 +3,11 @@ import ComponentRoute from "../Routes/ComponentRoute";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <ComponentRoute />
+      {children}
       <Footer />
     </div>
   );
