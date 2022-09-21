@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../../HOC/Layout";
-import HomeRoute from "../../Routes/HomeRoute";
+import FindTeachersRoute from "../../Routes/FindTeachersRoute";
 
 const Index = () => {
   return (
     <Layout>
-      <HomeRoute />
+      <FindTeachersRoute />
     </Layout>
   );
 };

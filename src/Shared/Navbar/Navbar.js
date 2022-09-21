@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../Assets/img/E-tutors-log.png";
 
 const Navbar = () => {
   return (
     <div className="">
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
+      <nav className="navbar navbar-expand-lg bg-light">
+        <div className="container">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo01"
@@ -15,21 +16,36 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand text-white" href="/home">
-              E-Tutors
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a className="navbar-brand text-white" href="/home">
+              <img style={{ height: "70px" }} src={logo} alt="" />
             </a>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/home">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link active" href="/home">
                   Home
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">
-                  Login
+              <li className="nav-item">
+                <a className="nav-link active" href="/find-teachers">
+                  Find Teachers
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" href="/home">
+                  Online Test
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" href="/home">
+                  Notes
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" href="/home">
+                  WorkSheet
                 </a>
               </li>
             </ul>
@@ -54,7 +70,7 @@ const Navbar = () => {
                   <li>
                     <Link className="dropdown-item" to="#">
                       <span className="me-2">
-                        <i class="fa-solid fa-user"></i>
+                        <i className="fa-solid fa-user"></i>
                       </span>
                       Profile
                     </Link>
@@ -66,7 +82,7 @@ const Navbar = () => {
                       to="/login"
                     >
                       <span className="me-2">
-                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <i className="fa-solid fa-right-from-bracket"></i>
                       </span>
                       Log out
                     </Link>

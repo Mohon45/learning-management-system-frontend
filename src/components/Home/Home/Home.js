@@ -1,16 +1,16 @@
 import React from "react";
+import About from "../About/About";
+import Catagories from "../Catagories/Catagories";
+import TopBanner from "../TopBanner/TopBanner";
+import WWO from "../WWO/WWO";
 
 const Home = () => {
   return (
     <div className="home">
-      <h1>This is Home Section</h1>
-      <h1>This is Home Section</h1>
-      <h1>This is Home Section</h1>
-      <h1>This is Home Section</h1>
-      <h1>This is Home Section</h1>
-      <h1>This is Home Section</h1>
-      <h1>This is Home Section</h1>
-      <h1>This is Home Section</h1>
+      <TopBanner />
+      <Catagories />
+      <About />
+      <WWO />
     </div>
   );
 };

@@ -6,6 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #f5efe6;
 }
 .wave {
   position: fixed;
@@ -239,7 +240,9 @@ form {
   font-size: 2rem;
 }
 .nav-item {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
 }
 .dropdown-avater-img {
   cursor: pointer;
@@ -247,8 +250,71 @@ form {
 .profile-icon-menu {
   background-color: #38d39f;
 }
+@media screen and (max-width: 767px) {
+  /* .container {
+    margin-top: 10px;
+  } */
+}
 
 /* Home Section Design Start */
+
+/* catagories section Design Start */
+.catagori-icon-sec {
+  width: 150px;
+  height: 150px;
+  color: #32be8f;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.catagori-icon-sec i {
+  padding-top: 50px;
+  padding-left: 35px;
+}
+.catagori-hover-effect a {
+  text-decoration: none;
+  color: #000;
+}
+/* .catagori-hover-effect:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+} */
+
+/* About Section Design Start */
+.about-desc h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.about-desc p {
+  text-align: justify;
+}
+
+/* WWO Section Design Start */
+.wwo-card-custom {
+  /* background-color: #25316d; */
+  color: #eee;
+  margin: 0 auto;
+}
+.wwo-card-custom:hover {
+  background-color: #32be8f !important;
+  color: #000;
+}
+.wwo-card-custom p {
+  text-align: justify;
+  margin-top: 15px;
+}
+.wwo-custom-hr {
+  width: 50px;
+  border-top: none;
+  border-bottom: 8px solid white !important;
+  border-radius: 20px;
+  margin: auto;
+}
+@media screen and (max-width: 767px) {
+  .wwo-card-custom {
+    margin-top: 20px;
+  }
+}
 
 /* Footer Section Design Start */
 .footer {

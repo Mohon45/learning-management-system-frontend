@@ -1,17 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "../components/Home/Home/Home";
+import Dashboard from "../components/FindTeachers/Dashboard/Dashboard";
 import NotFound from "../components/NotFound/NotFound";
 
-const ComponentRoute = () => {
+const FindTeachersRoute = () => {
   return (
     <div>
       <Routes>
-        <Route index element={<Home />} />
+        <Route index element={<Dashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
 };
 
-export default ComponentRoute;
+export default FindTeachersRoute;
