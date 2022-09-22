@@ -13,7 +13,7 @@ const Register = () => {
           <img src={bg} alt="" />
         </div>
         <div className="login-content">
-          <form>
+          <form className="auth-form">
             <img src={avater} alt="avater" />
             <div className="input-div one">
               <div className="i">
@@ -61,7 +61,7 @@ const Register = () => {
             <Link className="authorization-redirect" to="/login">
               Already Registered? Please Logins
             </Link>
-            <input type="submit" className="btn" value="Registration" />
+            <input type="submit" className="btn-auth" value="Registration" />
           </form>
         </div>
       </div>

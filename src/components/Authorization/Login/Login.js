@@ -13,7 +13,7 @@ const Login = () => {
           <img src={bg} alt="" />
         </div>
         <div className="login-content">
-          <form>
+          <form className="auth-form">
             <img src={avater} alt="" />
             <h2 className="title">Welcome </h2>
             <div className="input-div one">
@@ -39,7 +39,7 @@ const Login = () => {
             <Link className="authorization-redirect" to="/register">
               New User? Please Register
             </Link>
-            <input type="submit" className="btn" value="Login" />
+            <input type="submit" className="btn-auth" value="Login" />
           </form>
         </div>
       </div>

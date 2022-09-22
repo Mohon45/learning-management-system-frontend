@@ -7,6 +7,7 @@ import Home from "../components/Home/Home/Home";
 import HomeDashBoard from "../components/Home/Index";
 import FindTeachersDashBoard from "../components/FindTeachers/Index";
 import NotFound from "../components/NotFound/NotFound";
+import UserProfile from "../components/UserProfile/UserProfile";
 
 const CommonRoute = () => {
   return (
@@ -23,6 +24,7 @@ const CommonRoute = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home/*" element={<HomeDashBoard />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/find-teachers/*" element={<FindTeachersDashBoard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

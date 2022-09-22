@@ -68,7 +68,7 @@ const Navbar = () => {
 
                 <ul className="dropdown-menu profile-icon-menu">
                   <li>
-                    <Link className="dropdown-item" to="#">
+                    <Link className="dropdown-item" to="/profile">
                       <span className="me-2">
                         <i className="fa-solid fa-user"></i>
                       </span>

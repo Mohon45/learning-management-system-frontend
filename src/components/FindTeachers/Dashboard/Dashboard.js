@@ -1,17 +1,13 @@
 import React from "react";
+import TeacherSearchAndShow from "../TeacherSearchAndShow/TeacherSearchAndShow";
 
 const Dashboard = () => {
   return (
     <div className="container">
-      <h1>this is Find teachers dashboard</h1>
-      <h1>this is Find teachers dashboard</h1>
-      <h1>this is Find teachers dashboard</h1>
-      <h1>this is Find teachers dashboard</h1>
-      <h1>this is Find teachers dashboard</h1>
-      <h1>this is Find teachers dashboard</h1>
-      <h1>this is Find teachers dashboard</h1>
-      <h1>this is Find teachers dashboard</h1>
-      <h1>this is Find teachers dashboard</h1>
+      <h1 className="text-center fw-bold my-3">
+        Find a Teacher for Specific Subject
+      </h1>
+      <TeacherSearchAndShow />
     </div>
   );
 };
