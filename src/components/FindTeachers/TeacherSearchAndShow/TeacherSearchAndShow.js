@@ -9,7 +9,7 @@ const TeacherSearchAndShow = () => {
       >
         <div class="card-body">
           <form>
-            <div className="d-flex justify-content-around mt-5">
+            <div className="teachers-search-box d-flex justify-content-around mt-5">
               <div class="mb-3 class-name-input">
                 <label for="exampleInputDesignation" class="form-label">
                   Class
@@ -47,7 +47,7 @@ const TeacherSearchAndShow = () => {
         </div>
       </div>
 
-      <div className="my-5">
+      <div className="my-5 text-center">
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
             <a href="/home">

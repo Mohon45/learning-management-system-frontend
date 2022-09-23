@@ -368,6 +368,34 @@ body {
   transform: scale(1.1);
 }
 
+@media screen and (max-width: 767px) {
+  .find-techers-card {
+    height: 350px !important;
+  }
+  .teachers-search-box {
+    flex-direction: column;
+  }
+  .class-name-input {
+    width: 200px;
+  }
+}
+
+/* Teachers Details Section Design Start */
+.details-img img {
+  width: 300px;
+  height: 300px;
+}
+.details-description h5 {
+  line-height: 1.5;
+}
+.details-desc-tile {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.details-right-side {
+  border-left: 3px solid gray;
+}
+
 /* Footer Section Design Start */
 .footer {
   background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
