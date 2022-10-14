@@ -5,7 +5,7 @@ const Catagories = () => {
     <div className="container">
       <div className="row my-5">
         <div className="col-md-3 catagori-hover-effect">
-          <a href="/home">
+          <a href="/find-teachers">
             <div
               className="catagori-icon-sec"
               style={{ backgroundColor: "#25316D" }}
@@ -17,10 +17,10 @@ const Catagories = () => {
           </a>
         </div>
         <div className="col-md-3 catagori-hover-effect">
-          <a href="/home">
+          <a href="/online-test">
             <div
               className="catagori-icon-sec"
-              style={{ backgroundColor: "#F65A83" }}
+              style={{ backgroundColor: "#810955" }}
             >
               <i className="fa-solid fa-list-check fa-4x p-auto"></i>
             </div>
@@ -33,10 +33,10 @@ const Catagories = () => {
           </a>
         </div>
         <div className="col-md-3 catagori-hover-effect">
-          <a href="/home">
+          <a href="/notes">
             <div
               className="catagori-icon-sec"
-              style={{ backgroundColor: "green" }}
+              style={{ backgroundColor: "#25316D" }}
             >
               <i className="fa-solid fa-book fa-4x ps-5"></i>
             </div>
@@ -45,7 +45,7 @@ const Catagories = () => {
           </a>
         </div>
         <div className="col-md-3 catagori-hover-effect">
-          <a href="/home">
+          <a href="/worksheet">
             <div
               className="catagori-icon-sec"
               style={{ backgroundColor: "#810955" }}

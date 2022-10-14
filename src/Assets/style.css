@@ -194,7 +194,7 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-  .container {
+  .auth-container {
     grid-template-columns: 1fr;
   }
 
@@ -291,11 +291,19 @@ body {
 
 /* WWO Section Design Start */
 .wwo-card-custom {
-  /* background-color: #25316d; */
+  background-color: #25316d;
   color: #eee;
   margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
 }
 .wwo-card-custom:hover {
+  transform: scale(1.1);
   background-color: #32be8f !important;
   color: #000;
 }
@@ -386,7 +394,7 @@ body {
   height: 300px;
 }
 .details-description h5 {
-  line-height: 1.5;
+  line-height: 2;
 }
 .details-desc-tile {
   font-size: 1.3rem;
@@ -394,6 +402,13 @@ body {
 }
 .details-right-side {
   border-left: 3px solid gray;
+}
+
+/* Notes Sections Design Start */
+.download-btn,
+.download-btn:hover {
+  text-decoration: none;
+  color: white;
 }
 
 /* Footer Section Design Start */

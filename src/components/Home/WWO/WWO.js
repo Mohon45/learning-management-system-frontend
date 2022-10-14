@@ -17,7 +17,6 @@ const WWO = () => {
               style={{
                 width: "22rem",
                 height: "450px",
-                backgroundColor: "#25316d",
               }}
             >
               <div className="card-body text-center">
@@ -38,7 +37,6 @@ const WWO = () => {
               style={{
                 width: "22rem",
                 height: "450px",
-                backgroundColor: " #008000",
               }}
             >
               <div className="card-body text-center">
@@ -59,7 +57,6 @@ const WWO = () => {
               style={{
                 width: "22rem",
                 height: "450px",
-                backgroundColor: "#810955",
               }}
             >
               <div className="card-body text-center">

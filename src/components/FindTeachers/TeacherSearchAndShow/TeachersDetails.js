@@ -28,7 +28,7 @@ const TeachersDetails = () => {
                 Dhaka.
               </h5>
               <h5>
-                <span className="details-desc-tile">Teaching Subkects:</span>{" "}
+                <span className="details-desc-tile">Teaching Subjects:</span>{" "}
                 &nbsp; Math, Physics, Biggan
               </h5>
               <h5>
@@ -48,41 +48,52 @@ const TeachersDetails = () => {
         </div>
         <div className="col-md-4 details-right-side">
           <form>
-            <div class="mb-3">
-              <label for="exampleInputname" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleInputname" className="form-label">
                 Your Name
               </label>
-              <input type="text" class="form-control" id="exampleInputname" />
+              <input
+                type="text"
+                className="form-control"
+                id="exampleInputname"
+              />
             </div>
-            <div class="mb-3">
-              <label for="exampleInputname" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleInputname" className="form-label">
                 Your Phone Number
               </label>
-              <input type="number" class="form-control" id="exampleInputname" />
+              <input
+                type="number"
+                className="form-control"
+                id="exampleInputname"
+              />
             </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
                 Your Email
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
               />
             </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">
+            <div className="mb-3">
+              <label
+                htmlFor="exampleFormControlTextarea1"
+                className="form-label"
+              >
                 Details Information:
               </label>
               <textarea
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
                 rows="2"
               ></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" className="btn btn-primary">
               Send Message
             </button>
           </form>

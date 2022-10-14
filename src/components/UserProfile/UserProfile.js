@@ -2,6 +2,9 @@ import React from "react";
 import Layout from "../../HOC/Layout";
 
 const UserProfile = () => {
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const { user, token } = userInfo;
+
   return (
     <Layout>
       <div className="container card card-custom my-4">
@@ -23,44 +26,47 @@ const UserProfile = () => {
 
               <div className="col-md-6">
                 <div className="col-md-8 mx-auto">
-                  <div class="mb-3">
-                    <label for="exampleInputName" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputName" className="form-label">
                       Name
                     </label>
                     <input
                       type="email"
-                      class="form-control"
+                      value={user.name}
+                      className="form-control"
                       id="exampleInputName"
                     />
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputEmail" className="form-label">
                       Email
                     </label>
                     <input
                       type="email"
-                      class="form-control"
+                      value={user.email}
+                      className="form-control"
                       id="exampleInputEmail"
                       aria-describedby="emailHelp"
                     />
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputNumber" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputNumber" className="form-label">
                       Phone Number
                     </label>
                     <input
                       type="Number"
-                      class="form-control"
+                      className="form-control"
+                      placeholder="01"
                       id="exampleInputNumber"
                     />
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputAddress" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputAddress" className="form-label">
                       Address
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="exampleInputAddress"
                     />
                   </div>
@@ -71,72 +77,111 @@ const UserProfile = () => {
 
               <div className="col-md-6">
                 <div className="col-md-8 mx-auto">
-                  <div class="mb-3">
-                    <label for="exampleInputDesignation" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputAddress" className="form-label">
                       Designation
                     </label>
-                    <select
-                      class="form-select"
-                      aria-label="Default select example"
-                      id="exampleInputDesignation"
-                    >
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputTeachSubject" class="form-label">
-                      Your teaching Subjects
-                    </label>
                     <input
                       type="text"
-                      class="form-control"
-                      id="exampleInputTeachSubject"
+                      value={user.designation}
+                      className="form-control"
+                      id="exampleInputAddress"
                     />
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputstdClass" class="form-label">
-                      Class
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleInputstdClass"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputTeachClass" class="form-label">
-                      Your teaching Subjects
-                    </label>
-                    <input
-                      type="test"
-                      class="form-control"
-                      id="exampleInputTeachClass"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label
-                      for="exampleInputCurrentEmploynebt"
-                      class="form-label"
-                    >
-                      Your current employment
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleInputCurrentEmploynebt"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputstdSchool" class="form-label">
-                      Your School
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleInputstdSchool"
-                    />
-                  </div>
+
+                  {user?.designation === "teacher" ? (
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputTeachSubject"
+                        className="form-label"
+                      >
+                        Your teaching Subjects
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="English, Physics, Math"
+                        id="exampleInputTeachSubject"
+                      />
+                    </div>
+                  ) : null}
+
+                  {user?.designation === "student" ? (
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputstdClass"
+                        className="form-label"
+                      >
+                        Class
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="exampleInputstdClass"
+                      />
+                    </div>
+                  ) : null}
+                  {user?.designation === "teacher" ? (
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputTeachClass"
+                        className="form-label"
+                      >
+                        Your teaching Classes
+                      </label>
+                      <input
+                        type="test"
+                        className="form-control"
+                        placeholder="6, 7, 8"
+                        id="exampleInputTeachClass"
+                      />
+                    </div>
+                  ) : null}
+                  {user?.designation === "teacher" ? (
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputCurrentEmploynebt"
+                        className="form-label"
+                      >
+                        Your current employment
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="exampleInputCurrentEmploynebt"
+                      />
+                    </div>
+                  ) : null}
+                  {user?.designation === "student" ? (
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputstdSchool"
+                        className="form-label"
+                      >
+                        Your School
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="exampleInputstdSchool"
+                      />
+                    </div>
+                  ) : null}
+                  {user?.designation === "teacher" ? (
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputstdSchool"
+                        className="form-label"
+                      >
+                        Educational Qualification
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="exampleInputstdSchool"
+                      />
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>
