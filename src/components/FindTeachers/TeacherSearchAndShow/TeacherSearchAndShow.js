@@ -10,7 +10,7 @@ const TeacherSearchAndShow = () => {
   const { register, handleSubmit } = useForm();
 
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  const { user, token } = userInfo;
+  const { token } = userInfo;
 
   const onSearchHandler = (data) => {
     setLoading(true);
@@ -18,7 +18,7 @@ const TeacherSearchAndShow = () => {
 
     axios
       .get(
-        `http://localhost:5000/api/v1/etutors/teachers?teachingClass=${teachingClass}&teachingSubjects=${teachingSubjects}`,
+        `http://localhost:5000/api/v1/etutors/teachers?teachingSubjects=${teachingSubjects}&teachingClass=${teachingClass}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -41,57 +41,62 @@ const TeacherSearchAndShow = () => {
     <LoadingOverlay active={loading}>
       <div className="my-3">
         {rows?.length === 0 ? (
-          <div
-            className="card find-techers-card"
-            style={{ width: "80%", height: "45vh", margin: "auto" }}
-          >
-            <div className="card-body">
-              <form onSubmit={handleSubmit(onSearchHandler)}>
-                <div className="teachers-search-box d-flex justify-content-around mt-5">
-                  <div className="mb-3 class-name-input">
-                    <label
-                      htmlFor="exampleInputDesignation"
-                      className="form-label"
-                    >
-                      Class
-                    </label>
-                    <select
-                      className="form-select"
-                      aria-label="Default select example"
-                      id="exampleInputDesignation"
-                      {...register("teachingClass", { required: true })}
-                    >
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                      <option value="4">Four</option>
-                      <option value="5">Five</option>
-                      <option value="6">Six</option>
-                      <option value="7">Seven</option>
-                      <option value="8">Eight</option>
-                      <option value="9">Nine</option>
-                      <option value="10">Ten</option>
-                      <option value="more">More then</option>
-                    </select>
-                  </div>
+          <div>
+            <h1 className="text-center fw-bold my-3">
+              Find a Teacher for Specific Subject
+            </h1>
+            <div
+              className="card find-techers-card"
+              style={{ width: "80%", height: "45vh", margin: "auto" }}
+            >
+              <div className="card-body">
+                <form onSubmit={handleSubmit(onSearchHandler)}>
+                  <div className="teachers-search-box d-flex justify-content-around mt-5">
+                    <div className="mb-3 class-name-input">
+                      <label
+                        htmlFor="exampleInputDesignation"
+                        className="form-label"
+                      >
+                        Class
+                      </label>
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        id="exampleInputDesignation"
+                        {...register("teachingClass", { required: true })}
+                      >
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                        <option value="6">Six</option>
+                        <option value="7">Seven</option>
+                        <option value="8">Eight</option>
+                        <option value="9">Nine</option>
+                        <option value="10">Ten</option>
+                        <option value="more">More then</option>
+                      </select>
+                    </div>
 
-                  <div className="mb-3 class-name-input">
-                    <label htmlFor="exampleInputName" className="form-label">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      {...register("teachingSubjects", { required: true })}
-                      className="form-control"
-                      placeholder="any one subject"
-                      id="exampleInputName"
-                    />
+                    <div className="mb-3 class-name-input">
+                      <label htmlFor="exampleInputName" className="form-label">
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        {...register("teachingSubjects", { required: true })}
+                        className="form-control"
+                        placeholder="any one subject"
+                        id="exampleInputName"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="text-end me-5 pe-5 mt-3">
-                  <button className="btn btn-primary">Search</button>
-                </div>
-              </form>
+                  <div className="text-end me-5 pe-5 mt-3">
+                    <button className="btn btn-primary">Search</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         ) : (
