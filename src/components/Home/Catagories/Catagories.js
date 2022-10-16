@@ -27,9 +27,7 @@ const Catagories = () => {
             <h4 className="text-center mt-3 fw-bold">
               Online Test preparation
             </h4>
-            <p className="text-center">
-              SCAT, CogAT, SSAT, AP, ISEE, SAT, ACT, etc
-            </p>
+            <p className="text-center">SCAT, CogAT, SSAT, AP, ISEE, SAT, etc</p>
           </a>
         </div>
         <div className="col-md-3 catagori-hover-effect">

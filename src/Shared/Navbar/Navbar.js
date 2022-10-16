@@ -1,8 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../Assets/img/E-tutors-log.png";
+import logOutNotify from "../LogOutAlert/LogOutAlert";
+import avater from "../../Assets/img/avatar.svg";
+import axios from "axios";
 
 const Navbar = () => {
+  const [userdata, setUserdata] = useState({});
+  const navigate = useNavigate();
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/v1/etutors/user/${userInfo.user._id}`, {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        setUserdata(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  }, []);
+
+  let imageUrl = "";
+  if (userdata.image) {
+    imageUrl = userdata.image;
+  } else {
+    imageUrl = avater;
+  }
+
+  const LogOutHandler = () => {
+    logOutNotify(logOut);
+  };
+
+  const logOut = () => {
+    if (userInfo.user) {
+      localStorage.removeItem("userInfo");
+      navigate("/login", { replace: true });
+    }
+  };
   return (
     <div className="">
       <nav className="navbar navbar-expand-lg bg-light">
@@ -58,7 +98,7 @@ const Navbar = () => {
                   aria-expanded="false"
                 >
                   <img
-                    src="https://i.ibb.co/zh64p5L/user-Avater.png"
+                    src={imageUrl}
                     width="60"
                     height="60"
                     className="rounded-circle border border-4 "
@@ -68,7 +108,10 @@ const Navbar = () => {
 
                 <ul className="dropdown-menu profile-icon-menu">
                   <li>
-                    <Link className="dropdown-item" to="/profile">
+                    <Link
+                      className="dropdown-item"
+                      to={`/profile/${userInfo.user._id}`}
+                    >
                       <span className="me-2">
                         <i className="fa-solid fa-user"></i>
                       </span>
@@ -76,16 +119,15 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      // onClick={logout}
-                      className="dropdown-item"
-                      to="/login"
+                    <div
+                      onClick={LogOutHandler}
+                      className="dropdown-item log-out-custom"
                     >
                       <span className="me-2">
                         <i className="fa-solid fa-right-from-bracket"></i>
                       </span>
                       Log out
-                    </Link>
+                    </div>
                   </li>
                 </ul>
               </div>

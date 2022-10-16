@@ -1,198 +1,288 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 import Layout from "../../HOC/Layout";
+import avater from "../../Assets/img/avatar.svg";
+import { toast } from "react-toastify";
+import LoadingOverlay from "../../Shared/LoadingOverlay/LoadingOverlay";
 
 const UserProfile = () => {
+  const [userdata, setUserdata] = useState({});
+  const [loading, setLoading] = useState(false);
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  const { user, token } = userInfo;
+  const { token } = userInfo;
+  const { register, handleSubmit } = useForm();
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  let url = "";
+  if (userdata.image) {
+    url = userdata.image;
+  } else {
+    url = avater;
+  }
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/v1/etutors/user/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        setUserdata(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  }, [id, token]);
+
+  const onSubmitHandler = (data) => {
+    setLoading(true);
+    data.image = data.image[0];
+    console.log(data);
+    axios
+      .patch(`http://localhost:5000/api/v1/etutors/user/update/${id}`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          setLoading(false);
+          navigate("/home");
+          toast.success("Profile Successfully Updated!");
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setLoading(false);
+        toast.error("Something went Wrong! Try to Latter!");
+      });
+  };
 
   return (
-    <Layout>
-      <div className="container card card-custom my-4">
-        <div className="card-body">
-          <form>
-            <h2 className="fw-bold">Profile</h2>
-            <div className="user-profile-pic text-center">
-              <img src="https://i.ibb.co/zh64p5L/user-Avater.png" alt="" />{" "}
-              <br />
-              <input
-                className="profile-image-upload-input"
-                type="file"
-                name="avater"
-                id=""
-              />
-            </div>
-            <div className="row mt-4">
-              {/* left side */}
+    <LoadingOverlay active={loading}>
+      <Layout>
+        <div className="container card card-custom my-4">
+          <div className="card-body">
+            <form onSubmit={handleSubmit(onSubmitHandler)}>
+              <h2 className="fw-bold">Profile</h2>
+              <div className="user-profile-pic text-center">
+                <img src={url} alt="" /> <br />
+                <input
+                  className="profile-image-upload-input"
+                  type="file"
+                  {...register("image")}
+                  id=""
+                />
+              </div>
+              <div className="row mt-4">
+                {/* left side */}
 
-              <div className="col-md-6">
-                <div className="col-md-8 mx-auto">
-                  <div className="mb-3">
-                    <label htmlFor="exampleInputName" className="form-label">
-                      Name
-                    </label>
-                    <input
-                      type="email"
-                      value={user.name}
-                      className="form-control"
-                      id="exampleInputName"
-                    />
+                <div className="col-md-6">
+                  <div className="col-md-8 mx-auto">
+                    <div className="mb-3">
+                      <label htmlFor="exampleInputName" className="form-label">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        defaultValue={userdata.name}
+                        {...register("name")}
+                        className="form-control"
+                        id="exampleInputName"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="exampleInputEmail" className="form-label">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        readOnly
+                        defaultValue={userdata.email}
+                        className="form-control"
+                        id="exampleInputEmail"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputNumber"
+                        className="form-label"
+                      >
+                        Phone Number
+                      </label>
+                      <input
+                        type="number"
+                        className="form-control"
+                        defaultValue={userdata.phoneNumber}
+                        {...register("phoneNumber", { required: true })}
+                        placeholder="01"
+                        id="exampleInputNumber"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputAddress"
+                        className="form-label"
+                      >
+                        Address
+                      </label>
+                      <textarea
+                        className="form-control"
+                        defaultValue={userdata.address}
+                        {...register("address", { required: true })}
+                        id="exampleInputAddress"
+                        rows="3"
+                      ></textarea>
+                    </div>
                   </div>
-                  <div className="mb-3">
-                    <label htmlFor="exampleInputEmail" className="form-label">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      value={user.email}
-                      className="form-control"
-                      id="exampleInputEmail"
-                      aria-describedby="emailHelp"
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="exampleInputNumber" className="form-label">
-                      Phone Number
-                    </label>
-                    <input
-                      type="Number"
-                      className="form-control"
-                      placeholder="01"
-                      id="exampleInputNumber"
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="exampleInputAddress" className="form-label">
-                      Address
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="exampleInputAddress"
-                    />
+                </div>
+
+                {/* right side */}
+
+                <div className="col-md-6">
+                  <div className="col-md-8 mx-auto">
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputAddress"
+                        className="form-label"
+                      >
+                        Designation
+                      </label>
+                      <input
+                        type="text"
+                        readOnly
+                        defaultValue={userdata.designation}
+                        className="form-control"
+                        id="exampleInputAddress"
+                      />
+                    </div>
+
+                    {userdata?.designation === "teacher" ? (
+                      <div className="mb-3">
+                        <label
+                          htmlFor="exampleInputTeachSubject"
+                          className="form-label"
+                        >
+                          Your teaching Subjects
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          defaultValue={userdata.teachingSubjects}
+                          {...register("teachingSubjects", { required: true })}
+                          placeholder="English, Physics, Math"
+                          id="exampleInputTeachSubject"
+                        />
+                      </div>
+                    ) : null}
+
+                    {userdata?.designation === "student" ? (
+                      <div className="mb-3">
+                        <label
+                          htmlFor="exampleInputstdClass"
+                          className="form-label"
+                        >
+                          Class
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          defaultValue={userdata.class}
+                          {...register("class", { required: true })}
+                          id="exampleInputstdClass"
+                        />
+                      </div>
+                    ) : null}
+                    {userdata?.designation === "teacher" ? (
+                      <div className="mb-3">
+                        <label
+                          htmlFor="exampleInputTeachClass"
+                          className="form-label"
+                        >
+                          Your teaching Classes
+                        </label>
+                        <input
+                          type="test"
+                          className="form-control"
+                          defaultValue={userdata.teachingClass}
+                          {...register("teachingClass", { required: true })}
+                          placeholder="6, 7, 8"
+                          id="exampleInputTeachClass"
+                        />
+                      </div>
+                    ) : null}
+                    {userdata?.designation === "teacher" ? (
+                      <div className="mb-3">
+                        <label
+                          htmlFor="exampleInputCurrentEmploynebt"
+                          className="form-label"
+                        >
+                          Your current employment
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          defaultValue={userdata.currentEmployee}
+                          {...register("currentEmployee")}
+                          id="exampleInputCurrentEmploynebt"
+                        />
+                      </div>
+                    ) : null}
+                    {userdata?.designation === "student" ? (
+                      <div className="mb-3">
+                        <label
+                          htmlFor="exampleInputstdSchool"
+                          className="form-label"
+                        >
+                          Your School
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          defaultValue={userdata.school}
+                          {...register("school")}
+                          id="exampleInputstdSchool"
+                        />
+                      </div>
+                    ) : null}
+                    {userdata?.designation === "teacher" ? (
+                      <div className="mb-3">
+                        <label
+                          htmlFor="exampleInputstdSchool"
+                          className="form-label"
+                        >
+                          Educational Qualification
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          defaultValue={userdata.educationalQualifications}
+                          {...register("educationalQualifications", {
+                            required: true,
+                          })}
+                          id="exampleInputstdSchool"
+                        />
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>
 
-              {/* right side */}
-
-              <div className="col-md-6">
-                <div className="col-md-8 mx-auto">
-                  <div className="mb-3">
-                    <label htmlFor="exampleInputAddress" className="form-label">
-                      Designation
-                    </label>
-                    <input
-                      type="text"
-                      value={user.designation}
-                      className="form-control"
-                      id="exampleInputAddress"
-                    />
-                  </div>
-
-                  {user?.designation === "teacher" ? (
-                    <div className="mb-3">
-                      <label
-                        htmlFor="exampleInputTeachSubject"
-                        className="form-label"
-                      >
-                        Your teaching Subjects
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="English, Physics, Math"
-                        id="exampleInputTeachSubject"
-                      />
-                    </div>
-                  ) : null}
-
-                  {user?.designation === "student" ? (
-                    <div className="mb-3">
-                      <label
-                        htmlFor="exampleInputstdClass"
-                        className="form-label"
-                      >
-                        Class
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="exampleInputstdClass"
-                      />
-                    </div>
-                  ) : null}
-                  {user?.designation === "teacher" ? (
-                    <div className="mb-3">
-                      <label
-                        htmlFor="exampleInputTeachClass"
-                        className="form-label"
-                      >
-                        Your teaching Classes
-                      </label>
-                      <input
-                        type="test"
-                        className="form-control"
-                        placeholder="6, 7, 8"
-                        id="exampleInputTeachClass"
-                      />
-                    </div>
-                  ) : null}
-                  {user?.designation === "teacher" ? (
-                    <div className="mb-3">
-                      <label
-                        htmlFor="exampleInputCurrentEmploynebt"
-                        className="form-label"
-                      >
-                        Your current employment
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="exampleInputCurrentEmploynebt"
-                      />
-                    </div>
-                  ) : null}
-                  {user?.designation === "student" ? (
-                    <div className="mb-3">
-                      <label
-                        htmlFor="exampleInputstdSchool"
-                        className="form-label"
-                      >
-                        Your School
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="exampleInputstdSchool"
-                      />
-                    </div>
-                  ) : null}
-                  {user?.designation === "teacher" ? (
-                    <div className="mb-3">
-                      <label
-                        htmlFor="exampleInputstdSchool"
-                        className="form-label"
-                      >
-                        Educational Qualification
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="exampleInputstdSchool"
-                      />
-                    </div>
-                  ) : null}
-                </div>
+              <div className="text-end me-5 my-4">
+                <button className="btn btn-primary">Save</button>
               </div>
-            </div>
-
-            <div className="text-end me-5 my-4">
-              <button className="btn btn-primary">Save</button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </LoadingOverlay>
   );
 };
 

@@ -250,6 +250,9 @@ body {
 .profile-icon-menu {
   background-color: #38d39f;
 }
+.log-out-custom {
+  cursor: pointer;
+}
 @media screen and (max-width: 767px) {
   /* .container {
     margin-top: 10px;
@@ -333,6 +336,7 @@ body {
 }
 .user-profile-pic img {
   width: 100px;
+  height: 100px;
   border: 5px solid gray;
   border-radius: 50%;
 }

@@ -27,7 +27,7 @@ const CommonRoute = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home/*" element={<HomeDashBoard />} />
-        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/profile/:id" element={<UserProfile />} />
         <Route path="/find-teachers/*" element={<FindTeachersDashBoard />} />
         <Route path="/online-test" element={<OnlineTest />} />
         <Route path="/notes" element={<Notes />} />
