@@ -29,7 +29,7 @@ const TeachersDetails = () => {
               </h5>
               <h5>
                 <span className="details-desc-tile">Teaching Subjects:</span>{" "}
-                &nbsp; Math, Physics, Biggan
+                &nbsp; Math, Physics, Science
               </h5>
               <h5>
                 <span className="details-desc-tile">Teaching Clases:</span>{" "}
