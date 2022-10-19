@@ -74,6 +74,10 @@ const Login = () => {
                   />
                 </div>
               </div>
+              <p className="show-hind-text text-start">
+                Password must be a number,capital latter, small latter and
+                symbol
+              </p>
               <Link className="authorization-redirect" to="/register">
                 New User? Please Register
               </Link>

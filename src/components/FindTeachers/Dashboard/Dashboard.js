@@ -1,10 +1,10 @@
 import React from "react";
-import TeacherSearchAndShow from "../TeacherSearchAndShow/TeacherSearchAndShow";
+import TeachersLevel from "../TeachersLevel/TeachersLevel";
 
 const Dashboard = () => {
   return (
     <div className="container">
-      <TeacherSearchAndShow />
+      <TeachersLevel />
     </div>
   );
 };

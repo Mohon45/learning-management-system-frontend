@@ -101,6 +101,10 @@ const Register = () => {
                   />
                 </div>
               </div>
+              <p className="show-hind-text text-start">
+                Password must be a number,capital latter, small latter and
+                symbol
+              </p>
               <Link className="authorization-redirect" to="/login">
                 Already Registered? Please Logins
               </Link>

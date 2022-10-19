@@ -147,6 +147,11 @@ body {
   transition: 0.3s;
 }
 
+.show-hind-text {
+  width: 100%;
+  color: rgb(146, 144, 144);
+}
+
 .authorization-redirect:hover {
   color: #38d39f;
 }
@@ -292,6 +297,17 @@ body {
   text-align: justify;
 }
 
+/* Count section Design start */
+.count-section {
+  background-color: #bed2be;
+  border-radius: 10px;
+  padding: 20px;
+}
+.count-title {
+  color: #32be8f;
+  font-weight: bold;
+}
+
 /* WWO Section Design Start */
 .wwo-card-custom {
   background-color: #25316d;
@@ -355,6 +371,38 @@ body {
   font-weight: bold;
 }
 
+/* Teachers Level Section Design Start */
+.techers-level-card {
+  width: 80%;
+  height: 15rem;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.level-card-body-custom {
+  padding-top: 60px;
+}
+.level-card-shadow-custom:hover {
+  box-shadow: rgba(12, 235, 231, 0.886) 0px 5px 15px;
+}
+.teachers-level-link {
+  text-decoration: none;
+  color: #000;
+}
+.teachers-level-link:hover {
+  color: #000;
+}
+
+@media screen and (max-width: 600px) {
+  .level-section {
+    margin-top: 30px;
+  }
+  .techers-level-card {
+    height: 10rem;
+  }
+  .level-card-body-custom {
+    padding-top: 30px;
+  }
+}
 /* Find Teachers Sections Design Start */
 .find-techers-card {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
