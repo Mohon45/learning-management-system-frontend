@@ -456,6 +456,20 @@ body {
   border-left: 3px solid gray;
 }
 
+/* Online test section design Start */
+.class-card-custom {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+.subject-container {
+  margin-bottom: 100px !important;
+}
+@media screen and (max-width: 767px) {
+  .subject-container {
+    margin-bottom: 0 !important;
+  }
+}
+
 /* Notes Sections Design Start */
 .download-btn,
 .download-btn:hover {

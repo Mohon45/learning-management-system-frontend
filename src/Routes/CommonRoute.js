@@ -6,9 +6,9 @@ import RequireAuth from "../components/Authorization/RequireAuth/RequireAuth";
 import Home from "../components/Home/Home/Home";
 import HomeDashBoard from "../components/Home/Index";
 import FindTeachersDashBoard from "../components/FindTeachers/Index";
+import OnlineTestDashBoard from "../components/OnlineTest/Index";
 import NotFound from "../components/NotFound/NotFound";
 import UserProfile from "../components/UserProfile/UserProfile";
-import OnlineTest from "../components/OnlineTest/OnlineTest";
 import Notes from "../components/Notes/Notes";
 import WorkSheet from "../components/WorkSheet/WorkSheet";
 
@@ -32,7 +32,7 @@ const CommonRoute = () => {
           path="/find-teachers/level*"
           element={<FindTeachersDashBoard />}
         />
-        <Route path="/online-test" element={<OnlineTest />} />
+        <Route path="/online-test/level*" element={<OnlineTestDashBoard />} />
         <Route path="/notes" element={<Notes />} />
         <Route path="/worksheet" element={<WorkSheet />} />
         <Route path="*" element={<NotFound />} />
