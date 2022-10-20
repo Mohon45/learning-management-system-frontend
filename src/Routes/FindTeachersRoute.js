@@ -4,7 +4,7 @@ import Dashboard from "../components/FindTeachers/Dashboard/Dashboard";
 import HighSchool from "../components/FindTeachers/HighSchool/HighSchool";
 import Intermediate from "../components/FindTeachers/Intermediate/Intermediate";
 import Primary from "../components/FindTeachers/Primary/Primary";
-import TeachersDetails from "../components/FindTeachers/TeacherSearchAndShow/TeachersDetails";
+import TeachersDetails from "../components/FindTeachers/TeachersDetails";
 import University from "../components/FindTeachers/University/University";
 import NotFound from "../components/NotFound/NotFound";
 

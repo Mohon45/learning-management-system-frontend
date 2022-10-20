@@ -42,7 +42,6 @@ const UserProfile = () => {
   const onSubmitHandler = (data) => {
     setLoading(true);
     data.image = data.image[0];
-    console.log(data);
     axios
       .patch(`http://localhost:5000/api/v1/etutors/user/update/${id}`, data, {
         headers: {
@@ -76,8 +75,9 @@ const UserProfile = () => {
                 <input
                   className="profile-image-upload-input"
                   type="file"
-                  {...register("image")}
+                  {...register("image", { required: true })}
                   id=""
+                  required
                 />
               </div>
               <div className="row mt-4">
@@ -177,7 +177,7 @@ const UserProfile = () => {
                           className="form-control"
                           defaultValue={userdata.teachingSubjects}
                           {...register("teachingSubjects", { required: true })}
-                          placeholder="English, Physics, Math"
+                          placeholder="any one subject write small latter"
                           id="exampleInputTeachSubject"
                         />
                       </div>
@@ -209,11 +209,11 @@ const UserProfile = () => {
                           Your teaching Classes
                         </label>
                         <input
-                          type="test"
+                          type="number"
                           className="form-control"
                           defaultValue={userdata.teachingClass}
                           {...register("teachingClass", { required: true })}
-                          placeholder="6, 7, 8"
+                          placeholder="any one class"
                           id="exampleInputTeachClass"
                         />
                       </div>

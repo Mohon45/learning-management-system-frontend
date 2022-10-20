@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Catagories = () => {
   return (
     <div className="container">
       <div className="row my-5">
         <div className="col-md-3 catagori-hover-effect">
-          <a href="/find-teachers">
+          <Link to="/find-teachers/level">
             <div
               className="catagori-icon-sec"
               style={{ backgroundColor: "#25316D" }}
@@ -14,10 +15,10 @@ const Catagories = () => {
             </div>
             <h4 className="text-center mt-3 fw-bold">Online Tutoring</h4>
             <p className="text-center">Schedule a Free Trial</p>
-          </a>
+          </Link>
         </div>
         <div className="col-md-3 catagori-hover-effect">
-          <a href="/online-test">
+          <Link to="/online-test/level">
             <div
               className="catagori-icon-sec"
               style={{ backgroundColor: "#810955" }}
@@ -28,10 +29,10 @@ const Catagories = () => {
               Online Test preparation
             </h4>
             <p className="text-center">SCAT, CogAT, SSAT, AP, ISEE, SAT, etc</p>
-          </a>
+          </Link>
         </div>
         <div className="col-md-3 catagori-hover-effect">
-          <a href="/notes">
+          <Link to="/notes">
             <div
               className="catagori-icon-sec"
               style={{ backgroundColor: "#25316D" }}
@@ -40,10 +41,10 @@ const Catagories = () => {
             </div>
             <h4 className="text-center mt-3 fw-bold">Notes</h4>
             <p className="text-center">All subjects of all classes</p>
-          </a>
+          </Link>
         </div>
         <div className="col-md-3 catagori-hover-effect">
-          <a href="/worksheet">
+          <Link to="/worksheet">
             <div
               className="catagori-icon-sec"
               style={{ backgroundColor: "#810955" }}
@@ -52,7 +53,7 @@ const Catagories = () => {
             </div>
             <h4 className="text-center mt-3 fw-bold">Free Worksheets</h4>
             <p className="text-center">Download and Practice</p>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -68,26 +68,45 @@ const Navbar = () => {
                   Home
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link active" href="/find-teachers/level">
-                  Find Teachers
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" href="/online-test/level">
-                  Online Test
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" href="/notes">
-                  Notes
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" href="/worksheet">
-                  WorkSheet
-                </a>
-              </li>
+              {userInfo.user?.designation === "student" ? (
+                <>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/find-teachers/level">
+                      Find Teachers
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/online-test/level">
+                      Online Test
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/notes">
+                      Notes
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/worksheet">
+                      WorkSheet
+                    </a>
+                  </li>
+                </>
+              ) : null}
+
+              {userInfo.user?.designation === "teacher" ? (
+                <>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/worksheet">
+                      Upload Notes
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/worksheet">
+                      Messages
+                    </a>
+                  </li>
+                </>
+              ) : null}
             </ul>
 
             <div className="ms-3">

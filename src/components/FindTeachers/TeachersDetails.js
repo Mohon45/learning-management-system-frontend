@@ -1,6 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const TeachersDetails = () => {
+  const [items, setItems] = useState({});
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const { token } = userInfo;
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/v1/etutors/user/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        setItems(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div className="container">
       <h1 className="text-center fw-bold mt-3">Teacher Details</h1>
@@ -8,46 +30,38 @@ const TeachersDetails = () => {
         <div className="col-md-8">
           <div className="row">
             <div className="col-md-5 details-img">
-              <img
-                src="https://bdtutors.com/pofiles/71611832_4420_unnamed.jpg.jpg"
-                alt=""
-              />
+              <img src={items.image} alt="" />
             </div>
             <div className="col-md-7 details-description">
               <h5>
-                <span className="details-desc-tile">Name:</span> &nbsp; Md.
-                Habla Khan
-              </h5>
-              <h5>
-                <span className="details-desc-tile">Title:</span> &nbsp; Md.
-                Habla Khan
+                <span className="details-desc-tile">Name:</span> &nbsp;{" "}
+                {items.name}
               </h5>
               <h5>
                 <span className="details-desc-tile">Qualification:</span> &nbsp;
-                Studying BSS in Television,Film and Photography at University of
-                Dhaka.
+                {items.educationalQualifications}
               </h5>
               <h5>
-                <span className="details-desc-tile">Teaching Subjects:</span>{" "}
-                &nbsp; Math, Physics, Science
+                <span className="details-desc-tile">Teaching Subject:</span>{" "}
+                &nbsp; {items.teachingSubjects}
               </h5>
               <h5>
-                <span className="details-desc-tile">Teaching Clases:</span>{" "}
-                &nbsp; Six, Seven, Eight, Nine, Ten
+                <span className="details-desc-tile">Teaching Class:</span>{" "}
+                &nbsp; {items.teachingClass}
               </h5>
               <h5>
                 <span className="details-desc-tile">Phone Number:</span> &nbsp;
-                01782638193
+                {items.phoneNumber}
               </h5>
               <h5>
                 <span className="details-desc-tile">Email:</span> &nbsp;
-                hablukhan@gmail.com
+                {items.email}
               </h5>
             </div>
           </div>
         </div>
         <div className="col-md-4 details-right-side">
-          <form>
+          <div>
             <div className="mb-3">
               <label htmlFor="exampleInputname" className="form-label">
                 Your Name
@@ -96,7 +110,7 @@ const TeachersDetails = () => {
             <button type="submit" className="btn btn-primary">
               Send Message
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>

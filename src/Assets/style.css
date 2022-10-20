@@ -411,7 +411,8 @@ body {
   width: 300px;
 }
 .find-techers-show-card {
-  width: 80%;
+  width: 60%;
+  height: 350px !important;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   text-decoration: none;
@@ -426,6 +427,11 @@ body {
 }
 .find-techers-show-card:hover {
   transform: scale(1.1);
+}
+.find-techers-show-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 767px) {
