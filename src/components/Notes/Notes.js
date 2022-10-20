@@ -23,15 +23,26 @@ const Notes = () => {
               <td>16.10.2022</td>
               <td>SSC english paragraph suggestion 2023</td>
               <td>
-                <button className="btn btn-primary">
-                  <a
-                    className="download-btn"
-                    href="/pdf/ssc english paragraph suggestion 2023.pdf"
-                    download
-                  >
-                    Download
-                  </a>
-                </button>
+                <div className="">
+                  <button className="btn btn-primary">
+                    <a
+                      className="download-btn"
+                      href="/pdf/ssc english paragraph suggestion 2023.pdf"
+                      download
+                    >
+                      Download
+                    </a>
+                  </button>
+                  <button className="btn btn-primary ms-5">
+                    <a
+                      className="download-btn"
+                      href="/pdf/ssc english paragraph suggestion 2023.pdf"
+                      download
+                    >
+                      View
+                    </a>
+                  </button>
+                </div>
               </td>
             </tr>
             <tr>
