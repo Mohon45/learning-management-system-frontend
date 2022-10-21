@@ -2,6 +2,13 @@
   width: 975px;
   margin: 0 auto;
   margin-top: 20px;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 767px) {
+  .quiz {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 .question {

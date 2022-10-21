@@ -470,8 +470,14 @@ body {
 .subject-container {
   margin-bottom: 100px !important;
 }
+.intermediate-subject-container {
+  margin-bottom: 200px !important;
+}
 @media screen and (max-width: 767px) {
   .subject-container {
+    margin-bottom: 0 !important;
+  }
+  .intermediate-subject-container {
     margin-bottom: 0 !important;
   }
 }
@@ -483,7 +489,19 @@ body {
   color: white;
 }
 
-/* Footer Section Design Start */
+@media screen and (max-width: 767px) {
+  .note-vie-btn {
+    margin-top: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Worksheet section
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Footer Section Design Start
+--------------------------------------------------------------*/
 .footer {
   background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
 }

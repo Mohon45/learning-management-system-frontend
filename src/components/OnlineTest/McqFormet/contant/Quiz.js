@@ -7,41 +7,45 @@ const Quiz = () => {
 
   return (
     <div className="quiz">
-      {quizState.showResults && (
-        <div className="results">
-          <div className="congratulations">Congratulations!</div>
-          <div className="results-info">
-            <div>You have completed the quiz.</div>
-            <div>
-              You've got {quizState.correctAnswersCount} of &nbsp;
-              {quizState.questions.length} right.
+      <div className="row">
+        <div className="col">
+          {quizState.showResults && (
+            <div className="results">
+              <div className="congratulations">Congratulations!</div>
+              <div className="results-info">
+                <div>You have completed the Test.</div>
+                <div>
+                  You've got {quizState.correctAnswersCount} of &nbsp;
+                  {quizState.questions.length} right.
+                </div>
+              </div>
+              <div
+                onClick={() => dispatch({ type: "RESTART" })}
+                className="next-button"
+              >
+                Restart
+              </div>
             </div>
-          </div>
-          <div
-            onClick={() => dispatch({ type: "RESTART" })}
-            className="next-button"
-          >
-            Restart
-          </div>
-        </div>
-      )}
-      {!quizState.showResults && (
-        <div>
-          <div className="score">
-            Question {quizState.currentQuestionIndex + 1}/
-            {quizState.questions.length}
-          </div>
-          <Question />
-          {quizState.currentAnswer && (
-            <div
-              onClick={() => dispatch({ type: "NEXT_QUESTION" })}
-              className="next-button"
-            >
-              Next question
+          )}
+          {!quizState.showResults && (
+            <div>
+              <div className="score">
+                Question {quizState.currentQuestionIndex + 1}/
+                {quizState.questions.length}
+              </div>
+              <Question />
+              {quizState.currentAnswer && (
+                <div
+                  onClick={() => dispatch({ type: "NEXT_QUESTION" })}
+                  className="next-button"
+                >
+                  Next question
+                </div>
+              )}
             </div>
           )}
         </div>
-      )}
+      </div>
     </div>
   );
 };

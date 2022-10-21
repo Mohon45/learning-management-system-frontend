@@ -7,7 +7,7 @@ const Intermediate = () => {
   return (
     <div className="container my-4">
       <h1 className="text-center fw-bold">Select Your test Subject</h1>
-      <div className="row subject-container text-center my-5">
+      <div className="row intermediate-subject-container text-center my-5">
         <div className="col-md-3 mb-3">
           <div
             onClick={() => {

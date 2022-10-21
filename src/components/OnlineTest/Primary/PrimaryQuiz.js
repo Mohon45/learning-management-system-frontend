@@ -25,11 +25,9 @@ const PrimaryQuiz = () => {
         console.log(error);
       });
   }, [id, token]);
-  console.log(quizData);
 
   return (
     <div className="container">
-      <h1>Primary Quiz {id}</h1>
       {quizData !== null ? (
         <>
           <QuizProvider quizData={quizData} />
