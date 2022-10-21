@@ -1,37 +1,11 @@
-import axios from "axios";
-import React, { createContext, useReducer, useEffect } from "react";
-import { useState } from "react";
+import React, { createContext, useReducer } from "react";
 import Quiz from "../contant/Quiz";
-import questions from "../data";
 import { shuffleAnswers } from "../helpers";
 
 export const QuizContext = createContext();
 
 export const QuizProvider = (props) => {
-  const [questions, setQuestions] = useState([]);
-  const id = props.id;
-  console.log(id);
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  const { token } = userInfo;
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/v1/etutors/primary/quiz/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        const questions = res.data.data;
-        // setQuestions(res.data.data);
-        // console.log(res.data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-  console.log(questions);
+  const questions = props.quizData;
 
   const initialState = {
     questions,

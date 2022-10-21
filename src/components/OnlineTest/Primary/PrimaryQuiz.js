@@ -2,11 +2,10 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../McqFormet/McqFormet.css";
-import Quiz from "../McqFormet/contant/Quiz";
 import { QuizProvider } from "../McqFormet/contexts/quiz";
 
 const PrimaryQuiz = () => {
-  const [quizData, setQuizData] = useState([]);
+  const [quizData, setQuizData] = useState(null);
   const { id } = useParams();
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const { token } = userInfo;
@@ -25,12 +24,17 @@ const PrimaryQuiz = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id, token]);
+  console.log(quizData);
 
   return (
     <div className="container">
       <h1>Primary Quiz {id}</h1>
-      <QuizProvider id={id} />
+      {quizData !== null ? (
+        <>
+          <QuizProvider quizData={quizData} />
+        </>
+      ) : null}
     </div>
   );
 };
