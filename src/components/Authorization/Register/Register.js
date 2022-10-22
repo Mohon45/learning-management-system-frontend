@@ -17,9 +17,13 @@ const Register = () => {
   const onSubmitHandler = (data) => {
     setLoading(true);
     axios
-      .post("http://localhost:5000/api/v1/etutors/user/register", data, {
-        headers: { "Content-Type": "application/json" },
-      })
+      .post(
+        "https://e-tutors.onrender.com/api/v1/etutors/user/register",
+        data,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      )
       .then((res) => {
         setLoading(false);
         navigate("/login");

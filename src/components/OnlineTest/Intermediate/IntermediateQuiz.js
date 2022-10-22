@@ -1,11 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 
 const IntermediateQuiz = () => {
-  const { id } = useParams();
   return (
-    <div>
-      <h1>Intermediate Quiz {id}</h1>
+    <div className="container">
+      <h1 className="text-center fw-bold not-available-test mt-5">
+        In this Class Test Not available Now!
+      </h1>
     </div>
   );
 };

@@ -25,7 +25,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/etutors/user/${id}`, {
+      .get(`https://e-tutors.onrender.com/api/v1/etutors/user/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -43,12 +43,16 @@ const UserProfile = () => {
     setLoading(true);
     data.image = data.image[0];
     axios
-      .patch(`http://localhost:5000/api/v1/etutors/user/update/${id}`, data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
-      })
+      .patch(
+        `https://e-tutors.onrender.com/api/v1/etutors/user/update/${id}`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      )
       .then((res) => {
         if (res.status === 200) {
           setLoading(false);

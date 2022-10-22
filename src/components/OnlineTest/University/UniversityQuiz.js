@@ -1,11 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 
 const UniversityQuiz = () => {
-  const { id } = useParams();
   return (
     <div className="container">
-      <h1>University Quiz {id}</h1>
+      <h1 className="text-center fw-bold not-available-test mt-5">
+        In this Class Test Not available Now!
+      </h1>
     </div>
   );
 };

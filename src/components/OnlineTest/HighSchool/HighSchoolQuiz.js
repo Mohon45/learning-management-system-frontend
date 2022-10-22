@@ -11,12 +11,15 @@ const HighSchoolQuiz = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/etutors/high-school/quiz/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      })
+      .get(
+        `https://e-tutors.onrender.com/api/v1/etutors/high-school/quiz/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((res) => {
         setQuizData(res.data.data);
       })

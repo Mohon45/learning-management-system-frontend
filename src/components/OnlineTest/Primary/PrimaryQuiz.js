@@ -12,7 +12,7 @@ const PrimaryQuiz = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/etutors/primary/quiz/${id}`, {
+      .get(`https://e-tutors.onrender.com/api/v1/etutors/primary/quiz/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

@@ -10,7 +10,7 @@ const TeachersDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/etutors/user/${id}`, {
+      .get(`https://e-tutors.onrender.com/api/v1/etutors/user/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

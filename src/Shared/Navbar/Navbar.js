@@ -12,12 +12,15 @@ const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/etutors/user/${userInfo.user._id}`, {
-        headers: {
-          Authorization: `Bearer ${userInfo.token}`,
-          "Content-Type": "application/json",
-        },
-      })
+      .get(
+        `https://e-tutors.onrender.com/api/v1/etutors/user/${userInfo.user._id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${userInfo.token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((res) => {
         setUserdata(res.data.data);
       })

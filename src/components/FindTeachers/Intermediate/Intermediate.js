@@ -20,7 +20,7 @@ const Intermediate = () => {
 
     axios
       .get(
-        `http://localhost:5000/api/v1/etutors/teachers?teachingSubjects=${subject}&teachingclassName=${teachingClass}`,
+        `https://e-tutors.onrender.com/api/v1/etutors/teachers?teachingSubjects=${subject}&teachingclassName=${teachingClass}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
