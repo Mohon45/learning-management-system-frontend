@@ -22,7 +22,7 @@ const TeachersDetails = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id, token]);
   return (
     <div className="container">
       <h1 className="text-center fw-bold mt-3">Teacher Details</h1>
@@ -62,54 +62,29 @@ const TeachersDetails = () => {
         </div>
         <div className="col-md-4 details-right-side">
           <div>
-            <div className="mb-3">
-              <label htmlFor="exampleInputname" className="form-label">
-                Your Name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="exampleInputname"
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="exampleInputname" className="form-label">
-                Your Phone Number
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="exampleInputname"
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="exampleInputEmail1" className="form-label">
-                Your Email
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-              />
-            </div>
-            <div className="mb-3">
-              <label
-                htmlFor="exampleFormControlTextarea1"
-                className="form-label"
-              >
-                Details Information:
-              </label>
-              <textarea
-                className="form-control"
-                id="exampleFormControlTextarea1"
-                rows="2"
-              ></textarea>
-            </div>
+            <h4 className="fw-bold">Send a message to the teacher</h4>
+            <form>
+              <div className="conversation-text my-3 p-5">
+                <p>this features upcomming</p>
+              </div>
 
-            <button type="submit" className="btn btn-primary">
-              Send Message
-            </button>
+              <div className="input-group mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="message text here"
+                  aria-label="Recipient's username"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  className="btn btn-outline-secondary"
+                  type="button"
+                  id="button-addon2"
+                >
+                  <i className="fa-solid fa-circle-right message-send-icon fa-2x"></i>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

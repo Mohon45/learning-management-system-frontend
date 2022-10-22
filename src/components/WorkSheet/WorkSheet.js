@@ -10,56 +10,82 @@ const WorkSheet = () => {
   return (
     <Layout>
       <div className="container">
-        <div class="row gy-5 py-5">
-          <div class="col-xl-4 col-md-6">
-            <div class="service-item">
-              <div class="img">
-                <img src={liveSession} class="img-fluid" alt="" />
+        <div className="row gy-5 py-5">
+          <div className="col-xl-4 col-md-6">
+            <div className="service-item">
+              <div className="img">
+                <img src={liveSession} className="img-fluid" alt="" />
               </div>
-              <div class="details">
-                <div class="icon">
-                  <i class="fa-solid fa-users-between-lines"></i>
+              <div className="details">
+                <div className="icon">
+                  <i className="fa-solid fa-users-between-lines"></i>
                 </div>
                 <h3>Live Session</h3>
               </div>
             </div>
           </div>
-          <div class="col-xl-4 col-md-6">
-            <div class="service-item">
-              <div class="img">
-                <img src={groupStudy} class="img-fluid" alt="" />
+          <div className="col-xl-4 col-md-6">
+            <div className="service-item">
+              <div className="img">
+                <img src={groupStudy} className="img-fluid" alt="" />
               </div>
-              <div class="details">
-                <div class="icon">
-                  <i class="fa-solid fa-group-arrows-rotate"></i>
+              <div className="details">
+                <div className="icon">
+                  <i className="fa-solid fa-group-arrows-rotate"></i>
                 </div>
                 <h3>Find a Group Study</h3>
               </div>
             </div>
           </div>
-          <div class="col-xl-4 col-md-6">
-            <div class="service-item">
-              <div class="img">
-                <img src={shareIdea} class="img-fluid" alt="" />
+          <div className="col-xl-4 col-md-6">
+            <div className="service-item">
+              <div className="img">
+                <img src={shareIdea} className="img-fluid" alt="" />
               </div>
-              <div class="details">
-                <div class="icon">
-                  <i class="fa-solid fa-lightbulb"></i>
+              <div className="details">
+                <div className="icon">
+                  <i className="fa-solid fa-lightbulb"></i>
                 </div>
                 <h3>Share Ideas</h3>
               </div>
             </div>
           </div>
-          <div class="col-xl-4 col-md-6">
-            <div class="service-item">
-              <div class="img">
-                <img src={qa} class="img-fluid" alt="" />
+          <div className="col-xl-4 col-md-6">
+            <div className="service-item">
+              <div className="img">
+                <img src={qa} className="img-fluid" alt="" />
               </div>
-              <div class="details">
-                <div class="icon">
-                  <i class="fa-solid fa-clipboard-question"></i>
+              <div className="details">
+                <div className="icon">
+                  <i className="fa-solid fa-clipboard-question"></i>
                 </div>
                 <h3>QA Session</h3>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-4 col-md-6">
+            <div className="service-item">
+              <div className="img">
+                <img src={qa} className="img-fluid" alt="" />
+              </div>
+              <div className="details">
+                <div className="icon">
+                  <i className="fa-solid fa-clipboard-question"></i>
+                </div>
+                <h3>Conceptual Session</h3>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-4 col-md-6">
+            <div className="service-item">
+              <div className="img">
+                <img src={qa} className="img-fluid" alt="" />
+              </div>
+              <div className="details">
+                <div className="icon">
+                  <i className="fa-solid fa-clipboard-question"></i>
+                </div>
+                <h3>Assingment</h3>
               </div>
             </div>
           </div>

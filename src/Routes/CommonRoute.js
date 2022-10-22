@@ -11,6 +11,8 @@ import NotFound from "../components/NotFound/NotFound";
 import UserProfile from "../components/UserProfile/UserProfile";
 import Notes from "../components/Notes/Notes";
 import WorkSheet from "../components/WorkSheet/WorkSheet";
+import UploadNotes from "../components/Notes/UploadNotes";
+import TeacherMessage from "../components/TeacherMessage/TeacherMessage";
 
 const CommonRoute = () => {
   return (
@@ -34,6 +36,8 @@ const CommonRoute = () => {
         />
         <Route path="/online-test/level*" element={<OnlineTestDashBoard />} />
         <Route path="/notes" element={<Notes />} />
+        <Route path="/upload-notes" element={<UploadNotes />} />
+        <Route path="/teacher/message" element={<TeacherMessage />} />
         <Route path="/worksheet" element={<WorkSheet />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

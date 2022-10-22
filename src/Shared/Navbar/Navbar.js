@@ -24,7 +24,7 @@ const Navbar = () => {
       .catch((error) => {
         console.log(error.message);
       });
-  }, []);
+  }, [userInfo.user._id, userInfo.token]);
 
   let imageUrl = "";
   if (userdata.image) {
@@ -68,7 +68,8 @@ const Navbar = () => {
                   Home
                 </a>
               </li>
-              {userInfo.user?.designation === "student" ? (
+              {userInfo.user?.designation === "student" ||
+              userInfo.user?.designation === "admin" ? (
                 <>
                   <li className="nav-item">
                     <a className="nav-link active" href="/find-teachers/level">
@@ -93,15 +94,16 @@ const Navbar = () => {
                 </>
               ) : null}
 
-              {userInfo.user?.designation === "teacher" ? (
+              {userInfo.user?.designation === "teacher" ||
+              userInfo.user?.designation === "admin" ? (
                 <>
                   <li className="nav-item">
-                    <a className="nav-link active" href="/worksheet">
+                    <a className="nav-link active" href="/upload-notes">
                       Upload Notes
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link active" href="/worksheet">
+                    <a className="nav-link active" href="/teacher/message">
                       Messages
                     </a>
                   </li>

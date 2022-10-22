@@ -20,7 +20,7 @@ const Primary = () => {
 
     axios
       .get(
-        `http://localhost:5000/api/v1/etutors/teachers?teachingSubjects=${subject}&teachingClass=${teachingClass}`,
+        `http://localhost:5000/api/v1/etutors/teachers?teachingSubjects=${subject}&teachingclassName=${teachingClass}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
