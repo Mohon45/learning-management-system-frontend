@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# E-Tutors
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[https://e-tutors-ada6f.web.app/](https://e-tutors-ada6f.web.app/).
 
-## Available Scripts
+1. I have built a learning management system called E-Tutors using React, Bootstrap, Node.JS, Express.JS, MongoDB, Cloudinary, Etc.
+2. Both students and teachers can use this system, but there will be some feature differences between them.
+3. From here, students can find tutors for their specific subjects and check their preparation through online tests.
 
-In the project directory, you can run:
+## Its full process is described below.
 
-### `npm start`
+### `Step-1:`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+First of all, any user has to register to enter the application. At the time of registration, there will be a special field where the user type has to be selected. Basically, there will be 2 types of users, a teacher and a student. By which we can understand whether the user is a student or a teacher.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Step-2:`
 
-### `npm test`
+Registration and login will take them to their profile to update their profile. From there they can update their profile. For example:-
+In the case of the teacher, all the details of the teacher such as his identity, what subject he is a teacher of, what position he is currently working in, how to contact him, etc.
+In case of students, which class they belong to, their address, name of guardians, their contact details, etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Step-3:`
 
-### `npm run build`
+After updating the profile they will move to the dashboard. From there, if the students select the subject of their own class, the list of teachers of that subject will appear. From there they can select the teacher of their choice. And from there you can contact those teachers.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Step-4:`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After that students can check their preparation through an online test. When multiple-choice questions will be given to them, they will answer as they like and at the end, they will see their results.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Step-5:`
 
-### `npm run eject`
+Then there is a section called notes for them from where they will get suggestion notes for each of their subjects. They can also view and download from there if they want.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Step-6:`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+There is another section called WorkSheet for students. Where they can share their ideas, create groups, join live sessions, and more.
