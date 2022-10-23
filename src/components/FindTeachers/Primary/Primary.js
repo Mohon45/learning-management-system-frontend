@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingOverlay from "../../../Shared/LoadingOverlay/LoadingOverlay";
+import avatar from "../../../Assets/img/avatar.svg";
 
 const Primary = () => {
   const [rows, setRows] = useState([]);
@@ -106,7 +107,7 @@ const Primary = () => {
                   <Link to={`/find-teachers/level/teacher-details/${item._id}`}>
                     <div className="card find-techers-show-card h-100">
                       <img
-                        src={item.image}
+                        src={item.image ? item.image : avatar}
                         className="card-img-top mt-2"
                         alt="..."
                       />

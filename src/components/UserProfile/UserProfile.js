@@ -63,7 +63,7 @@ const UserProfile = () => {
       .catch((error) => {
         console.log(error.message);
         setLoading(false);
-        toast.error("Something went Wrong! Try to Latter!");
+        toast.error(error);
       });
   };
 
