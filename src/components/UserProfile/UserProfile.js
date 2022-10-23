@@ -79,9 +79,8 @@ const UserProfile = () => {
                 <input
                   className="profile-image-upload-input"
                   type="file"
-                  {...register("image", { required: true })}
+                  {...register("image")}
                   id=""
-                  required
                 />
               </div>
               <div className="row mt-4">
