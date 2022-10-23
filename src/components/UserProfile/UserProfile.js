@@ -41,7 +41,10 @@ const UserProfile = () => {
 
   const onSubmitHandler = (data) => {
     setLoading(true);
-    data.image = data.image[0];
+    if (data.image) {
+      data.image = data.image[0];
+    }
+
     axios
       .patch(
         `https://e-tutors.onrender.com/api/v1/etutors/user/update/${id}`,
