@@ -6,10 +6,11 @@ import Layout from "../../HOC/Layout";
 import avater from "../../Assets/img/avatar.svg";
 import { toast } from "react-toastify";
 import LoadingOverlay from "../../Shared/LoadingOverlay/LoadingOverlay";
+import Loader from "../../Shared/Loader/Loader";
 
 const UserProfile = () => {
   const [userdata, setUserdata] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const { token } = userInfo;
   const { register, handleSubmit } = useForm();
@@ -33,6 +34,7 @@ const UserProfile = () => {
       })
       .then((res) => {
         setUserdata(res.data.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error.message);
@@ -182,7 +184,9 @@ const UserProfile = () => {
                           type="text"
                           className="form-control"
                           defaultValue={userdata.teachingSubjects}
-                          {...register("teachingSubjects", { required: true })}
+                          {...register("teachingSubjects", {
+                            required: true,
+                          })}
                           placeholder="any one subject write small latter"
                           id="exampleInputTeachSubject"
                         />

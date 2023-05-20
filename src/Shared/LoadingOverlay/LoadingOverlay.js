@@ -5,7 +5,7 @@ import "./LoadingOverlay.css";
 
 const LoadingOverlay = ({ active, children }) => {
   const COLORS = {
-    PRIMARY: "#4154f1",
+    PRIMARY: "#38d39f",
   };
   return (
     <Loading active={active} spinner={<HashLoader color={COLORS.PRIMARY} />}>

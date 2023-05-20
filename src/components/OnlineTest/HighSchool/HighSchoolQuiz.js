@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { QuizProvider } from "../McqFormet/contexts/quiz";
+import Loader from "../../../Shared/Loader/Loader";
 
 const HighSchoolQuiz = () => {
   const [quizData, setQuizData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const { token } = userInfo;
@@ -22,18 +24,26 @@ const HighSchoolQuiz = () => {
       )
       .then((res) => {
         setQuizData(res.data.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false);
       });
   }, [id, token]);
   return (
     <div className="container">
-      {quizData !== null ? (
+      {loading ? (
+        <Loader />
+      ) : (
         <>
-          <QuizProvider quizData={quizData} />
+          {quizData !== null ? (
+            <>
+              <QuizProvider quizData={quizData} />
+            </>
+          ) : null}
         </>
-      ) : null}
+      )}
     </div>
   );
 };
