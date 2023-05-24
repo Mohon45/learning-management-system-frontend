@@ -44,7 +44,7 @@ const HighSchool = () => {
 
   return (
     <LoadingOverlay active={loading}>
-      <div className="my-3">
+      <div className="container my-3">
         {rows?.length === 0 ? (
           <div>
             <h1 className="text-center fw-bold my-3">

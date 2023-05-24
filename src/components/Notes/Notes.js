@@ -20,7 +20,7 @@ const Notes = () => {
           <tbody className="text-center">
             <tr>
               <th>1</th>
-              <td>16.10.2022</td>
+              <td>16.05.2023</td>
               <td>SSC english paragraph suggestion 2023</td>
               <td>
                 <div className="">
@@ -48,7 +48,7 @@ const Notes = () => {
             </tr>
             <tr>
               <th>2</th>
-              <td>16.10.2022</td>
+              <td>23.05.2023</td>
               <td>Bangla 2nd paper-suggetion</td>
               <td>
                 <button className="btn btn-primary me-3">
@@ -75,7 +75,7 @@ const Notes = () => {
 
             <tr>
               <th>4</th>
-              <td>17.10.2022</td>
+              <td>23.05.2023</td>
               <td>Physics-suggetion</td>
               <td>
                 <button className="btn btn-primary me-3">
@@ -100,7 +100,7 @@ const Notes = () => {
             </tr>
             <tr>
               <th>5</th>
-              <td>17.10.2022</td>
+              <td>23.05.2023</td>
               <td>SSC 2023 bangla 1st paper question</td>
               <td>
                 <button className="btn btn-primary me-3">
@@ -126,7 +126,7 @@ const Notes = () => {
             </tr>
             <tr>
               <th>5</th>
-              <td>17.10.2022</td>
+              <td>23.05.2023</td>
               <td>SSC 2023 chemistry mcq suggestion</td>
               <td>
                 <button className="btn btn-primary me-3">
@@ -152,7 +152,7 @@ const Notes = () => {
             </tr>
             <tr>
               <th>5</th>
-              <td>19.10.2022</td>
+              <td>23.05.2023</td>
               <td>SSC biology suggestion 2023</td>
               <td>
                 <button className="btn btn-primary me-3">
@@ -178,7 +178,7 @@ const Notes = () => {
             </tr>
             <tr>
               <th>5</th>
-              <td>19.10.2022</td>
+              <td>23.05.2023</td>
               <td>SSC chemistry suggestion 2023</td>
               <td>
                 <button className="btn btn-primary me-3">

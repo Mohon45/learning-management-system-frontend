@@ -310,6 +310,10 @@ body {
 }
 
 /* WWO Section Design Start */
+.card-parant {
+  display: flex;
+  justify-content: center;
+}
 .wwo-card-custom {
   background-color: #25316d;
   color: #eee;
@@ -343,6 +347,46 @@ body {
     margin-top: 20px;
   }
 }
+
+/* instructor section design start */
+.instructor {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+}
+.instructor-desc {
+  width: 400px;
+}
+.instructor-desc p {
+  width: 400px;
+}
+.instructor-desc button {
+  border: none;
+  background-color: #32be8f;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .instructor {
+    width: 90%;
+    flex-direction: column;
+  }
+  .instructor-desc {
+    margin-top: 50px;
+  }
+}
+/* instructor section design end */
+
+/* partner section design start */
+.pratner-img {
+  width: 100px;
+  /* height: 100px; */
+}
+/* partner section design end */
 
 /* User Profile Section Design Start */
 .card-custom {
@@ -412,7 +456,7 @@ body {
   width: 300px;
 }
 .find-techers-show-card {
-  width: 60%;
+  width: 75%;
   height: 350px !important;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -430,9 +474,9 @@ body {
   transform: scale(1.1);
 }
 .find-techers-show-card img {
-  width: 200px;
-  height: 200px;
-  border-radius: 15px;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 767px) {
@@ -451,6 +495,8 @@ body {
 .details-img img {
   width: 300px;
   height: 300px;
+  border-radius: 10px;
+  border: 2px solid gray;
 }
 .details-description h5 {
   line-height: 2;
@@ -543,6 +589,9 @@ body {
 /*--------------------------------------------------------------
 # Review Section Design Start
 --------------------------------------------------------------*/
+.testimonial-item {
+  width: 25rem;
+}
 .testimonial-item p {
   background-color: rgba(60, 58, 58, 0.144);
   padding: 20px 20px 6rem 20px;
@@ -577,6 +626,9 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .testimonials {
+    display: none;
+  }
   .testimonial-item {
     margin-bottom: 50px;
   }

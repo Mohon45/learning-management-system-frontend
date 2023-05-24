@@ -10,8 +10,8 @@ const WWO = () => {
         <h1 className="fw-bold text-center">
           What We <span style={{ color: "#32be8f" }}>Offer</span>
         </h1>
-        <div className="row mt-4">
-          <div className="col-md-4">
+        <div className="row mt-4 ">
+          <div className="col-md-4 card-parant">
             <div
               className="card wwo-card-custom"
               style={{
@@ -31,7 +31,7 @@ const WWO = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 card-parant">
             <div
               className="card wwo-card-custom"
               style={{
@@ -51,7 +51,7 @@ const WWO = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 card-parant">
             <div
               className="card wwo-card-custom"
               style={{

@@ -23,8 +23,8 @@ const Login = () => {
       .then((res) => {
         setLoading(false);
         localStorage.setItem("userInfo", JSON.stringify({ ...res.data.data }));
-        navigate(`/profile/${res.data.data.user._id}`);
-        toast.success("User Successfully Registered!");
+        navigate("/");
+        toast.success("User Successfully Login!");
       })
       .catch((error) => {
         setLoading(false);

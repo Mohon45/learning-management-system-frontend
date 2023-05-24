@@ -5,6 +5,8 @@ import Count from "../Count/Count";
 import Review from "../Review/Review";
 import TopBanner from "../TopBanner/TopBanner";
 import WWO from "../WWO/WWO";
+import Teaching from "../Teaching/Teaching";
+import Partner from "../Partner/Partner";
 
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
       <Count />
       <WWO />
       <Review />
+      <Teaching />
+      <Partner />
     </div>
   );
 };

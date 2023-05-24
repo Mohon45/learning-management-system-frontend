@@ -62,25 +62,25 @@ const Footer = () => {
                   <span>
                     <i className="fa-solid fa-angles-right"></i>
                   </span>{" "}
-                  <a href="/home">Online Tutors</a>
+                  <a href="/find-teachers/level">Online Tutors</a>
                 </p>
                 <p className="quick-link-item">
                   <span>
                     <i className="fa-solid fa-angles-right"></i>
                   </span>{" "}
-                  <a href="/home">Online Test preparation</a>
+                  <a href="/online-test/level">Online Test preparation</a>
                 </p>
                 <p className="quick-link-item">
                   <span>
                     <i className="fa-solid fa-angles-right"></i>
                   </span>{" "}
-                  <a href="/home">Notes</a>
+                  <a href="/notes">Notes</a>
                 </p>
                 <p className="quick-link-item">
                   <span>
                     <i className="fa-solid fa-angles-right"></i>
                   </span>{" "}
-                  <a href="/home">Free Worksheets</a>
+                  <a href="/worksheet">Free Worksheets</a>
                 </p>
               </div>
             </div>
